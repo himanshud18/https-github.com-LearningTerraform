@@ -24,7 +24,7 @@ resource "aws_instance" "default" {
   #! /bin/bash
       sudo yum -y install httpd
       sudo systemctl start httpd
-      echo "<html><body style=background-color:powderblue;>Refinitiv Lab</body></html>" | sudo tee /var/www/html/index.html
+      echo "<html><body style=background-color:red;>Refinitiv Lab</body></html>" | sudo tee /var/www/html/index.html
       EOF
 }
 
