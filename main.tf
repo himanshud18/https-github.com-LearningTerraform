@@ -22,10 +22,10 @@ resource "aws_instance" "default" {
   instance_type          = "${var.instance_type}"
   user_data = <<-EOF
    #! /bin/bash
-   yum update -y
-   yum install httpd mod_ssl
-   service httpd start
-   chkconfig httpd on
+   sudo yum update -y
+   sudo yum install httpd mod_ssl
+   sudo service httpd start
+   sudo chkconfig httpd on
    cd /var/www/html
    echo "<html><body style=background-color:powderblue;>Refinitiv Lab</body></html>" > index.html
   EOF
