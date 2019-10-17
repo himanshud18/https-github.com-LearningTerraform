@@ -27,7 +27,7 @@ resource "aws_instance" "default" {
       echo "<html><body style=background-color:red;><h1>Refinitiv Lab</h1></body></html>" | sudo tee /var/www/html/index.html
       EOF
 }
-
+#
 # Create Security Group for EC2
 resource "aws_security_group" "default" {
   name = "terraform-default-sg"
