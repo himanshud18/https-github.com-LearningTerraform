@@ -21,15 +21,11 @@ resource "aws_instance" "default" {
   source_dest_check      = false
   instance_type          = "${var.instance_type}"
   user_data = <<-EOF
-   #! /bin/bash
-   sudo apt-get update
-	 sudo apt-get install -y apache2
-	 sudo systemctl start apache2
-	 sudo systemctl enable apache2
-         echo "<h1>Deployed via Terraform</h1>" | sudo tee /var/www/html/index.html
-  EOF
-    
-}
+  #! /bin/bash
+      sudo yum -y install httpd
+      sudo systemctl start httpd
+      echo "<html><body style=background-color:powderblue;>Refinitiv Lab</body></html>" | sudo tee /var/www/html/index.html
+    }
 
 # Create Security Group for EC2
 resource "aws_security_group" "default" {
