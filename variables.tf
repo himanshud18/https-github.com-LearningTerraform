@@ -1,5 +1,5 @@
 variable "counts" {
-  default = 1
+  default = 2
 }
 
 variable "key_name" {
