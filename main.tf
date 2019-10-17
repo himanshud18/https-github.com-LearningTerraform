@@ -26,8 +26,7 @@ resource "aws_instance" "default" {
 	 sudo apt-get install -y apache2
 	 sudo systemctl start apache2
 	 sudo systemctl enable apache2
-   cd /var/www/html
-   echo "<html><body style=background-color:powderblue;>Refinitiv Lab</body></html>" > index.html
+         echo "<h1>Deployed via Terraform</h1>" | sudo tee /var/www/html/index.html
   EOF
     
 }
