@@ -25,7 +25,7 @@ resource "aws_instance" "default" {
       sudo yum -y install httpd
       sudo systemctl start httpd
       echo "<html><body style=background-color:powderblue;>Refinitiv Lab</body></html>" | sudo tee /var/www/html/index.html
-    }
+}
 
 # Create Security Group for EC2
 resource "aws_security_group" "default" {
