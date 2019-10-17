@@ -20,19 +20,16 @@ resource "aws_instance" "default" {
   vpc_security_group_ids = ["${aws_security_group.default.id}"]
   source_dest_check      = false
   instance_type          = "${var.instance_type}"
-
-
-user_data = << EOF
-  #! /bin/bash
-  yum update -y
-  yum install httpd mod_ssl
-  service httpd start
-  chkconfig httpd on
-  cd /var/www/html
-  echo "<html><body style=background-color:powderblue;>Refinitiv Lab</body></html>" > index.html
-EOF
-  
-  
+  user_data = << EOF
+   #! /bin/bash
+   yum update -y
+   yum install httpd mod_ssl
+   service httpd start
+   chkconfig httpd on
+   cd /var/www/html
+   echo "<html><body style=background-color:powderblue;>Refinitiv Lab</body></html>" > index.html
+  EOF
+    
 }
 
 # Create Security Group for EC2
